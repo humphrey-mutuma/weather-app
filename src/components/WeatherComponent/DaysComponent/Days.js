@@ -8,6 +8,7 @@ import floody from '../../../images/floody.svg';
 import rain from '../../../images/rain.svg';
 
 function RandomTemperatures() {
+  // const descriptions=['Sunny','Cloud','Cloudy','Floody','Rainy']
   return Math.floor((Math.random() * 10) + 30)
 }
 
@@ -23,15 +24,16 @@ class Days extends Component{
     }
   }
 
-  // temperatureHandler = (props) => {
-  //   const temperature = this.state.temperature;
-  //   this.setState({temperature: })
-  // }
     render(){
       const daysOfTheWeek=['Monday','Tuesday','Wednesday','Thur', 'Friday', 'Weekend'];
       const days= daysOfTheWeek.map((day) => 
         <li>{day}</li>
       );
+
+      const descriptions=['Sunny','Cloud','Cloudy','Floody','Rainy']
+      const description = descriptions.map((desc) =>
+          {desc}
+        ) 
        return (
         <div className="Days">
             <Day
@@ -39,7 +41,7 @@ class Days extends Component{
                 time={this.state.time}
                 image={sun}
                 temperature={<RandomTemperatures />}
-                description="Sunny" />
+                description={description}/>
             <Day
                 day={days[1]}
                 time={this.state.time}
