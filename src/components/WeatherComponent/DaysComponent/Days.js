@@ -7,6 +7,10 @@ import cloudy from '../../../images/cloudy.svg';
 import floody from '../../../images/floody.svg';
 import rain from '../../../images/rain.svg';
 
+function RandomTemperatures() {
+  return Math.floor((Math.random() * 10) + 30)
+}
+
 class Days extends Component{
   constructor(props){
     super(props);
@@ -19,10 +23,10 @@ class Days extends Component{
     }
   }
 
-  temperatureHandler = (props) => {
-    const temperature = this.state.temperature;
-    this.setState({temperature: Math.floor((Math.random() * 10) + 30)})
-  }
+  // temperatureHandler = (props) => {
+  //   const temperature = this.state.temperature;
+  //   this.setState({temperature: })
+  // }
     render(){
       const daysOfTheWeek=['Monday','Tuesday','Wednesday','Thur', 'Friday', 'Weekend'];
       const days= daysOfTheWeek.map((day) => 
@@ -34,31 +38,31 @@ class Days extends Component{
                 day={days[0]}
                 time={this.state.time}
                 image={sun}
-                temperature={this.temperatureHandler}
+                temperature={<RandomTemperatures />}
                 description="Sunny" />
             <Day
                 day={days[1]}
                 time={this.state.time}
                 image={cloud}
-                temperature={this.state.temperature}
+                temperature={<RandomTemperatures />}
                 description="cloud" />
             <Day
                 day={days[2]}
                 time={this.state.time}
                 image={cloudy}
-                temperature={this.state.temperature}
+                temperature={<RandomTemperatures />}
                 description="cloudy" />
-            <Day
+            <Day 
                 day={days[3]}
                 time={this.state.time}
                 image={floody}
-                temperature={this.state.temperature}
+                temperature={<RandomTemperatures />}
                 description="floody" />
             <Day
                 day={days[4]}
                 time={this.state.time}
                 image={rain}
-                temperature={this.state.temperature}
+                temperature={<RandomTemperatures />}
                 description="rain" />
         </div>
     ) 
