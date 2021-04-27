@@ -32,8 +32,8 @@ class Days extends Component{
 
       const descriptions=['Sunny','Cloud','Cloudy','Floody','Rainy']
       const description = descriptions.map((desc) =>
-          {desc}
-        ) 
+         <>{desc}</> 
+      );
        return (
         <div className="Days">
             <Day
@@ -41,31 +41,31 @@ class Days extends Component{
                 time={this.state.time}
                 image={sun}
                 temperature={<RandomTemperatures />}
-                description={description}/>
+                description={description[0]}/>
             <Day
                 day={days[1]}
                 time={this.state.time}
                 image={cloud}
                 temperature={<RandomTemperatures />}
-                description="cloud" />
+                description={description[1]}/>
             <Day
                 day={days[2]}
                 time={this.state.time}
                 image={cloudy}
                 temperature={<RandomTemperatures />}
-                description="cloudy" />
+                description={description[2]}/>
             <Day 
                 day={days[3]}
                 time={this.state.time}
                 image={floody}
                 temperature={<RandomTemperatures />}
-                description="floody" />
+                description={description[3]}/>
             <Day
                 day={days[4]}
                 time={this.state.time}
                 image={rain}
                 temperature={<RandomTemperatures />}
-                description="rain" />
+                description={description[4]}/>
         </div>
     ) 
     }
